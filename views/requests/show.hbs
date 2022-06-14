@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col s12 m8">
+        <h3>{{request.title}}
+            <small>{{{editIcon request.user user request._id false}}}</small>
+        </h3>
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}</span>
+                {{{request.body}}}
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m4">
+        <div class="card center-align">
+            <div class="card-content">
+                <span class="card-title">{{request.user.displayName}}</span>
+                <img src="{{request.user.image}}" class="circle responsive-img img-small">
+            </div>
+            <div class="card-action">
+                <a href="/requests/user/{{request.user._id}}">More From {{request.user.firstName}}</a>
+            </div>
+        </div>
+    </div>
+</div>
